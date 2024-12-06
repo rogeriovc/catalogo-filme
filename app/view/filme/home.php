@@ -23,24 +23,22 @@ $filmes = $filmeModel-> buscar_todos();
     <header>
         <nav>
             <ul>
-                <li><a href="cadastro.php">CADASTRO</a</li>
+                <li><a href="cadastro.php">CADASTRO</a></li>
                 <li><a href="home.php">HOME</a></li>
                 <li><a href="listar.php">LISTAR</a></li>
-
             </ul>
         </nav>
     </header>
-    <?php foreach($filmes as $filme) {?>
-        <section class="container_card">
-            <div class="cards">
-               <img class="img" src="<?php echo $filme->img?>" alt="">
-               <h3 class="titulo"> <?php echo $filme->nome?></h3>
-               <span class="descricao"><?php echo $filme->descricao?></span>
-            </div>
-        </section>
 
-<?php } ?>
- 
+    <section class="container_card">
+        <?php foreach($filmes as $filme) { ?>
+            <div class="cards">
+                <img class="img" src="<?php echo $filme->img?>" alt="">
+                <h3 class="titulo"> <?php echo $filme->nome?></h3>
+                <span class="descricao"><?php echo $filme->descricao?></span>
+            </div>
+        <?php } ?>
+    </section>
 
 </body>
 </html>
