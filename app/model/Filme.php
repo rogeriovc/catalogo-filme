@@ -15,6 +15,8 @@ class Filme {
     public $ano;
     public $descricao;
 
+    public $img;
+
     public function __construct() {
         global $pdo;
         $this->pdo = $pdo;

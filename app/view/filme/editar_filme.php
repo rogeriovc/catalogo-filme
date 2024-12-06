@@ -1,27 +1,50 @@
 <?php
-
-require_once __DIR__. "\..\..\model\Filme.php";
-require_once __DIR__ . "\..\..\config/env.php";
-require_once __DIR__ . "\..\..\config\database.php";
-
-if ($_SERVER["REQUEST_METHOD"] === "POST"){
-    print_r($_POST);
-    $id= $_POST["id"];
-    $nome = $_POST["nome"];
-    $ano = $_POST["ano"];
-    $descricao = $_POST["descricao"];
-    
-    $filmeModel= new Filme();
-    $sucesso = $filmeModel->editar_filme( $id,$nome ,$ano,$descricao);
-    
-    if ($sucesso){
+require_once __DIR__."\..\..\model\Filme.php";
+ 
+$filmeModel = new Filme();
+ 
+if($_SERVER["REQUEST_METHOD"] === "POST"){
+    $id = $_POST["id"];
+ 
+    $sucesso = false;
+   
+    if(empty($id)){
+            //fluxo para editar
+ 
+            $nome = $_POST["nome"];
+            $ano = $_POST["ano"];
+            $descricao = $_POST["descricao"];
+ 
+            $sucesso = $filmeModel->editar_filme($id,$nome,$ano,$descricao);
+    } else {
+ 
+   
+            $nome = $_POST["nome"];
+            $ano = $_POST["ano"];
+            $descricao = $_POST["descricao"];
+ 
+            $sucesso = $filmeModel->cadastro($nome, $ano, $descricao);
+    }
+   
+    if($sucesso){
         return header("Location: listar.php?mensagem=sucesso");
-        }
-    else {
+    } else{
         return header("Location: listar.php?mensagem=erro");
     }
-    } 
+}else if($_SERVER["REQUEST_METHOD"] === "GET"){
+ 
+ 
+    $filme = null;
+ 
+    if(!empty($_GET['id'])){
 
+       $filme = $filmeModel->buscar_id($_GET['id']);
+    }else{
+
+        $filme = new Filme();
+    }
+ 
+}
 
 ?>
 
@@ -32,7 +55,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST"){
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Editar Filme</title>
     <link rel="stylesheet" href="/catalogo-filme/public/CSS/style.css">
-    <link rel="stylesheet" href="/catalogo-filme/view/filme/editar_filme.php">
+
 </head>
 <body>
 <section class="container">
@@ -40,17 +63,17 @@ if ($_SERVER["REQUEST_METHOD"] === "POST"){
             <h2>Editar/Atualizar Filme</h2>
             <div>
                 <label for="">Nome do filme:</label>
-                <input type="text" id = "nome" name="nome"  placeholder="nome do filme...">
+                <input type="text" id = "nome" name="nome"  placeholder="nome do filme..." value="<?php echo $filme->nome?>">
             </div>
  
             <div>
                 <label for="">Ano de lançamento:</label>
-                <input type="int" id="ano" name="ano"  placeholder="ano de lançamento...">
+                <input type="int" id="ano" name="ano"  placeholder="ano de lançamento..." value="<?php echo $filme->ano?>">
             </div>
  
             <div>
                 <label for="">Descrição do filme:</label>
-                <input type="text" id="descricao" name="descricao"  placeholder="descrição...">
+                <input type="text" id="descricao" name="descricao"  placeholder="descrição..." value="<?php echo $filme->descricao?>">
             </div>
  
             <button>Salvar</button>

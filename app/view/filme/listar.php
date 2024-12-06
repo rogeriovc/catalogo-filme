@@ -24,6 +24,7 @@ $filmes = $filmeModel-> buscar_todos();
 <body>
 <section class="container">
     <h2>Filmes</h2>
+    
     <div class="acao">
         <a href="cadastro.php">
             <button>
@@ -34,6 +35,17 @@ $filmes = $filmeModel-> buscar_todos();
 
             </button>
         </a>
+    </div>
+
+    <div class="home">
+        <a href="home.php">
+            <button>
+            <span class="material-symbols-outlined">
+                home
+            </span>        
+            </button>
+        </a>
+    </div>
 
     </div>
 <table class="table">
@@ -42,6 +54,7 @@ $filmes = $filmeModel-> buscar_todos();
         <th>NOME</th>
         <th>ANO</th>
         <th>DESCRIÇÃO</th>
+        <th>IMG</th>
         <th>AÇÃO</th>
     </thead>
     <tbody>
@@ -52,7 +65,7 @@ $filmes = $filmeModel-> buscar_todos();
             <td><?php echo $filme->nome?></td>
             <td><?php echo $filme->ano?></td>
             <td><?php echo $filme->descricao?></td>
-
+            <td><img src="<?php echo $filme->img?>" alt=""></td>
             <td>
                 <form action="visualizar.php" method="GET">
                     <input type="hidden" name="id" value="<?= $filme->id; ?>">

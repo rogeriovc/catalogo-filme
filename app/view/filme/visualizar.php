@@ -29,6 +29,8 @@ $filme = $filmeModel->buscar_id(id: $id);
     <h3>Nome: <?php echo $filme->nome?></h3>
     <p>Ano: <?php echo $filme->ano?></p>
     <p>Descrição: <?php echo $filme->descricao?></p>
+    <p>Imagem:<img src="<?php echo $filme->img?>" alt=""></p>
+
 
 
     <form action="listar.php" method="GET">
