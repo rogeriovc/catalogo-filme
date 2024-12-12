@@ -23,8 +23,14 @@ body{
         width: 300px;
     }
     p{
-        text-align: left;
+        text-align: center;
     }
+}
+
+form{
+    align-items: center;
+    display: flex;
+    flex-direction: column;
 }
 
 
@@ -143,3 +149,41 @@ img{
     text-align: justify;
 }
 
+.cadastroc {
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin: 20px auto;
+    padding: 20px;
+    max-width: 800px;
+ 
+   div {
+        margin-bottom: 15px;
+ 
+    }
+    label {
+        display: block;
+        margin-bottom: 5px;
+        font-weight: bold;
+    }
+ 
+    input{
+        width: 80%;
+        padding: 8px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+    }
+ 
+    button {
+        background: #aac1aa;
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+    }
+ 
+    button:hover {
+        background: #464846;
+    }
+}

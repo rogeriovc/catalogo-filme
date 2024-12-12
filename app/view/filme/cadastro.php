@@ -32,28 +32,7 @@ else {
     <link rel="stylesheet" href="/catalogo-filme/view/filme/cadastro.php">
 </head>
 <body>
-<!--    <div class="container_2">
-        <h2>Cadastro de Filmes</h2>
-        <label for="insira o nome">insira o titulo</label>
-        <input type="text"name="insira o nome" placeholder="nome do filme" required>
-
-        <label for="insira o ano">insira o titulo</label>
-        <input type="int"name="insira o ano" placeholder="ano de lançamento" required>
-
-        <label for="descricao">descrição do filme</label>
-        <input type="text"name="insira a descricao" placeholder="descricao do filme" required>
-
-    </div>
-    <section class="container_2"> 
-    <form action="Filme.php" method="POST">
-        <button>
-            Cadastrar
-        </button>
-    </form>
-    </section>
-    <script src="/catalogo-filme/public/js/main.js" defer></script>
--->
-<section class="container">
+<section class="cadastroc">
         <form action="cadastro.php" method="POST">
             <h2>Cadastro de Filmes</h2>
             <div>
@@ -72,6 +51,8 @@ else {
             </div>
  
             <button>Salvar</button>
+            <br>
+            <br>
         </form>
 
         <form action="listar.php" method="GET">
