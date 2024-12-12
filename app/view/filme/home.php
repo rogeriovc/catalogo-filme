@@ -28,18 +28,17 @@ $filmes = $filmeModel-> buscar_todos();
                 <li><a href="listar.php">LISTAR</a></li>
             </ul>
         </nav>
-    </header>
+    </header>   
 
-<<<<<<< HEAD
-    <section class="container_card">     
-=======
     <section class="container_card">
->>>>>>> 9c9d70ea1e700cdf4040d2120145d39347834e3c
+
         <?php foreach($filmes as $filme) { ?>
             <div class="cards">
                 <img class="img" src="<?php echo $filme->img?>" alt="">
+                <div>
                 <h3 class="titulo"> <?php echo $filme->nome?></h3>
                 <span class="descricao"><?php echo $filme->descricao?></span>
+                </div>
             </div>
         <?php } ?>
     </section>
