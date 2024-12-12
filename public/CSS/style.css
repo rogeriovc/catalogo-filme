@@ -125,11 +125,11 @@ ul{
     box-sizing: border-box; /* Inclui padding e border na largura total */
 }
 
-.container_card .cards {
+.container_card .cards{
     border: 1px solid black;
     width: 200px;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     border-radius: 20px;
     padding: 10px;
     gap: 15px;
@@ -137,6 +137,7 @@ ul{
     color: black;
     box-shadow: 0px 0px 10px 2px rgb(29, 27, 27, 0.477);
     transition: 1s;
+    
 }
 
 h3{

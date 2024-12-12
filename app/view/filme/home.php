@@ -30,7 +30,11 @@ $filmes = $filmeModel-> buscar_todos();
         </nav>
     </header>
 
+<<<<<<< HEAD
     <section class="container_card">     
+=======
+    <section class="container_card">
+>>>>>>> 9c9d70ea1e700cdf4040d2120145d39347834e3c
         <?php foreach($filmes as $filme) { ?>
             <div class="cards">
                 <img class="img" src="<?php echo $filme->img?>" alt="">
