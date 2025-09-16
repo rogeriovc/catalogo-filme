@@ -1,0 +1,281 @@
+@import url('https://fonts.googleapis.com/css2?family=Parkinsans:wght@300..800&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined");
+
+:root{
+    --cor-sucesso: #4caf50;
+    --cor-erro:#ff4d4d ; 
+    --cor-branco: #fff;
+    --cinza-claro:#cdd0d3;
+    --cor-cinza-escuro: #bed4eab2;
+}
+
+
+
+body{
+    font-family: "Parkinsans", sans-serif;
+    font-size: 16px;
+}
+
+.container{
+    width: 80%;
+    margin: 0 auto;
+    img{
+        width: 300px;
+    }
+    p{
+        text-align: center;
+    }
+}
+
+form{
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+}
+
+
+.notificacao{
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    color: var(--cor-branco);
+    padding: 16px;
+    border-radius: 6px;
+    box-shadow:  0 2px 10 px rgba(0, 0, 0, 0.3);
+    z-index: 999;
+
+    &.sucesso{
+        background-color: var(--cor-sucesso);
+    }
+
+    &.erro{
+        background-color:var(--cor-erro);
+    }
+}
+
+.acao{
+    display: flex;
+    justify-content: end;
+    a{
+        text-decoration: unset;
+    }
+    
+    button{
+        display: flex;
+        justify-content: end;
+        align-items: center;
+    }
+}
+
+
+
+.table {
+    width: 100%;
+    border-color: #cdd0d3b2;
+    border-collapse:collapse ;
+
+    thead, th, tbody, td, tr{
+        border-color: inherit;
+        border-style: solid;
+        border-width: 0;
+    }
+
+    th, td {
+        border-bottom-width: 2px;
+        padding: 0.5rem;
+        text-align: left;
+    }
+
+    tbody tr:nth-child(even){
+        background-color: var(--cinza-claro);
+    }
+
+    tbody tr:hover{
+        background-color:  var(--cor-cinza-escuro);
+    }
+}
+
+img{
+    width: 115px;
+
+}
+
+nav{
+    background-color: var(--cor-cinza-escuro);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 8vh;
+    
+}
+ul{
+    display: flex;
+    list-style: none;
+    gap: 30px;
+    letter-spacing: 2px;
+}
+.container_card {
+    margin-top: 24px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    flex-direction: row;
+    width: 100%; /* Certifique-se de que o contêiner pai tenha largura suficiente */
+    box-sizing: border-box; /* Inclui padding e border na largura total */
+}
+
+.container_card .cards{
+    border: 1px solid black;
+    width: 200px;
+    display: flex;
+    flex-direction: column;
+    border-radius: 20px;
+    padding: 10px;
+    gap: 15px;
+    background-color: var(--cinza-claro);
+    color: black;
+    box-shadow: 0px 0px 10px 2px rgb(29, 27, 27, 0.477);
+    transition: 1s;
+    
+}
+
+h3{
+    font-size: 1.5 em;
+}
+img{
+    border-radius: 10px;
+}
+.container_card .card span{
+    text-align: justify;
+}
+
+.cadastroc {
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin: 20px auto;
+    padding: 20px;
+    max-width: 800px;
+ 
+   div {
+        margin-bottom: 15px;
+ 
+    }
+    label {
+        display: block;
+        margin-bottom: 5px;
+        font-weight: bold;
+    }
+ 
+    input{
+        width: 80%;
+        padding: 8px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+    }
+ 
+    button {
+        background: #aac1aa;
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+    }
+ 
+    button:hover {
+        background: #464846;
+    }
+}
+/* Adicione estas regras ao seu style.css existente */
+
+/* Imagens nos cards da home */
+.container_card .cards img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+/* Imagem na tabela de listagem */
+.table img {
+    width: 80px;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 4px;
+}
+
+/* Imagem na página de visualização */
+.container img {
+    max-width: 300px;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    margin: 10px 0;
+}
+
+/* Formulários */
+.cadastroc textarea, 
+.container textarea {
+    width: 80%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-family: inherit;
+    resize: vertical;
+}
+
+.cadastroc small {
+    color: #666;
+    font-size: 0.85em;
+    margin-top: 5px;
+    display: block;
+}
+
+/* Preview de imagem nos formulários */
+#img-preview {
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    margin-top: 10px;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .container_card {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 15px;
+    }
+    
+    .container_card .cards {
+        width: 100%;
+    }
+    
+    .table {
+        font-size: 14px;
+    }
+    
+    .table img {
+        width: 60px;
+        height: 90px;
+    }
+}
+
+/* Placeholder para imagens quebradas */
+img {
+    background-color: #f0f0f0;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' fill='%23999'%3E%3Cpath d='M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zM5 19l3-4 2 3 3-4 4 5H5z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+/* Mensagens de erro e sucesso */
+.erro-msg {
+    background-color: #ff4444;
+    color: white;
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 5px;
+    text-align: center;
+}
